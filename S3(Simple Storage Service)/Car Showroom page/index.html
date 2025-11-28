@@ -1,13 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesla Car Company</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tesla Car Showroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <h1>Tesla Car Company </h1>
-    <footer>All rights are reserved by tesla @2025</footer>
-    
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="brand" href="#">Tesla Showroom</a>
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#inventory">Inventory</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a class="btn btn-primary" href="#inventory">Explore</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-inner container">
+                <h1>Drive The Future — Today</h1>
+                <p>Discover electric performance, safety, and elegant design. Test drive your next car at our showroom.</p>
+                <div class="hero-ctas">
+                    <a class="btn btn-primary" href="#inventory">View Inventory</a>
+                    <a class="btn" href="#contact">Book Test Drive</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventory" class="container inventory">
+            <h2>Featured Models</h2>
+            <p class="muted">Hand-picked selection of our most popular models.</p>
+
+            <div class="cards">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="Model S"/>
+                    <div class="card-body">
+                        <h3>Model S</h3>
+                        <p class="price">Starting at $89,990</p>
+                        <p class="desc">Long range, ludicrous acceleration and advanced autopilot.</p>
+                        <div class="card-actions">
+                            <button class="btn" data-title="Model S" data-desc="Long range, ludicrous acceleration and advanced autopilot." data-img="https://images.unsplash.com/photo-1549921296-3d1227a7ea6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc">View Details</button>
+                            <a class="btn btn-primary" href="#contact">Buy Now</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="Model 3"/>
+                    <div class="card-body">
+                        <h3>Model 3</h3>
+                        <p class="price">Starting at $39,990</p>
+                        <p class="desc">Efficient, fun-to-drive, and the most popular electric sedan.</p>
+                        <div class="card-actions">
+                            <button class="btn" data-title="Model 3" data-desc="Efficient, fun-to-drive, and the most popular electric sedan." data-img="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=def">View Details</button>
+                            <a class="btn btn-primary" href="#contact">Buy Now</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="Model X"/>
+                    <div class="card-body">
+                        <h3>Model X</h3>
+                        <p class="price">Starting at $99,990</p>
+                        <p class="desc">Spacious SUV with falcon wing doors and top-tier towing capacity.</p>
+                        <div class="card-actions">
+                            <button class="btn" data-title="Model X" data-desc="Spacious SUV with falcon wing doors and top-tier towing capacity." data-img="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi">View Details</button>
+                            <a class="btn btn-primary" href="#contact">Buy Now</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="container about">
+            <h2>About Our Showroom</h2>
+            <p>We offer factory-certified vehicles, flexible financing, and hassle-free trade-ins. Our friendly staff will help you find the right car for your needs.</p>
+        </section>
+
+        <section id="contact" class="container contact">
+            <h2>Book a Test Drive</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We will contact you soon.');">
+                <input type="text" placeholder="Your name" required />
+                <input type="email" placeholder="Email address" required />
+                <input type="tel" placeholder="Phone (optional)" />
+                <button class="btn btn-primary" type="submit">Request Test Drive</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Tesla Showroom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for details -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <button class="modal-close" aria-label="Close">×</button>
+            <img id="modalImg" src="" alt="" />
+            <h3 id="modalTitle">Model</h3>
+            <p id="modalDesc"></p>
+            <div class="modal-actions">
+                <a class="btn btn-primary" href="#contact">Book Test Drive</a>
+                <button class="btn modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
